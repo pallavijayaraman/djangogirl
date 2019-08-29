@@ -7,16 +7,12 @@
             <h1><a href="/">Pallavi's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Health</a></h2>
-            <p>If you must change your future, you must change the present - So what’s 2016 going to look like? A year where you wake up and go to the gym regularly or the one where you wake up only to put the alarm on snooze? Or something in between, where for the first three weeks you are a gym rat and after that count out the months left for 2017 to begin?</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Lifestyle</a></h2>
-            <p>If you must change your future, you must change the present - So what’s 2016 going to look like? A year where you wake up and go to the gym regularly or the one where you wake up only to put the alarm on snooze? Or something in between, where for the first three weeks you are a gym rat and after that count out the months left for 2017 to begin?</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
